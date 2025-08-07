@@ -1,0 +1,135 @@
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\Interop.AXIMAGELib.dll
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\Interop.RealSvrOcxTcpLib.dll
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\AxInterop.AXIMAGELib.dll
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\AxInterop.RealSvrOcxTcpLib.dll
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.Cache
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.exe
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\AxInterop.AXIMAGELib.dll
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\Newtonsoft.Json.dll
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+J:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+N:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+N:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+N:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+N:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\HS\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.exe
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\bin\Release\AxInterop.AXIMAGELib.dll
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\bin\Release\Newtonsoft.Json.dll
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csprojResolveAssemblyReference.cache
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+Q:\FKAttend\Samples\RealTimeLog\FKRealSvrOCX(TCP)Sample\c#\FKRealSvrOcxTcpSample\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.Cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\Newtonsoft.Json.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csprojAssemblyReference.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CoreCompileInputs.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CopyComplete
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190308 HSSDK\20190308 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\bin\Release\Newtonsoft.Json.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csprojAssemblyReference.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CoreCompileInputs.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CopyComplete
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\20190525 HSSDK\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.AXIMAGELib.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\Newtonsoft.Json.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csprojAssemblyReference.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CoreCompileInputs.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CopyComplete
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.AXIMAGELib.dll
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\Newtonsoft.Json.dll
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csprojAssemblyReference.cache
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.cache
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CoreCompileInputs.cache
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CopyComplete
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\Interop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\obj\x86\Release\AxInterop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105  CS SDK - biomax - new\Samples\FKRealTimeLog\c#\bin\Release\Interop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\Newtonsoft.Json.dll
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\Interop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csprojAssemblyReference.cache
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\Interop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\AxInterop.RealSvrOcxTcpLib.dll
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.cache
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CoreCompileInputs.cache
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CopyComplete
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe.config
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\FKRealSvrOcxTcpCSSample.pdb
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\Newtonsoft.Json.dll
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\Interop.RealSvrOcxTcpLib.dll
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\bin\Release\AxInterop.RealSvrOcxTcpLib.dll
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csprojAssemblyReference.cache
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\Interop.RealSvrOcxTcpLib.dll
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\AxInterop.RealSvrOcxTcpLib.dll
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.ResolveComReference.cache
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.Form1.resources
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.Properties.Resources.resources
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.GenerateResource.cache
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpSample.csproj.CopyComplete
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.exe
+F:\桌面\匡国威\更改考勤状态\20191106_CS_SDK_biomax_new\Samples\FKRealTimeLog\c#\obj\x86\Release\FKRealSvrOcxTcpCSSample.pdb

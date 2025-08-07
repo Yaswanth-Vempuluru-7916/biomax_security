@@ -1,0 +1,145 @@
+Q:\FKAttend\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\bin\x86\Release\FK623AttendDllCSSample.exe.config
+Q:\FKAttend\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\Interop.AXIMAGELib.dll
+Q:\FKAttend\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\AxInterop.AXIMAGELib.dll
+Q:\FKAttend\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.csproj.ResolveComReference.cache
+E:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\bin\x86\Release\FK623AttendDllCSSample.exe.config
+E:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\Interop.AXIMAGELib.dll
+E:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\AxInterop.AXIMAGELib.dll
+E:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.csproj.ResolveComReference.cache
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\bin\x86\Release\FK623AttendDllCSSample.exe.config
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\Interop.AXIMAGELib.dll
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\AxInterop.AXIMAGELib.dll
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.csproj.ResolveComReference.cache
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\bin\x86\Release\FK623AttendDllCSSample.exe
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\bin\x86\Release\Newtonsoft.Json.dll
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\bin\x86\Release\Interop.AXIMAGELib.dll
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\bin\x86\Release\AxInterop.AXIMAGELib.dll
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmDoorTimeHS.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmPassTimeHS.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmPhotoManage.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmAdjust.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmBellInfo.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmEnroll.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmLog.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmMain.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmNetInfo.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmPasstimeInfo.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmPostShiftInfo.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmProductData.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmSelectFKFirmwareVer.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmSystemInfo.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.frmUserInfo.resources
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.csproj.GenerateResource.Cache
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FK623AttendDllCSSample.exe
+F:\CS_FKAttend\FKAttend_SDK\Develop\run\FK623AttendDllCSSample.exe.config
+F:\CS_FKAttend\FKAttend_SDK\Develop\run\FK623AttendDllCSSample.exe
+F:\CS_FKAttend\FKAttend_SDK\Samples\HaoShun_FKAttend_dll_sample\excel_shift\c#\obj\x86\Release\FKAttendDllCSSample.csprojResolveAssemblyReference.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\Develop\run\FK623AttendDllCSSample.exe.config
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\Develop\run\FK623AttendDllCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe.config
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\bin\x86\Release\ADODB.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\bin\x86\Release\Newtonsoft.Json.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\bin\x86\Release\Interop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\bin\x86\Release\AxInterop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\Interop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\AxInterop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.ResolveComReference.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmDoorTimeHS.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPassTimeHS.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPhotoManage.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmAdjust.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmBellInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmEnroll.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmLog.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmMain.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmNetInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPasstimeInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPostShiftInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmProductData.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSelectFKFirmwareVer.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSystemInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmUserInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.GenerateResource.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.CoreCompileInputs.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.CopyComplete
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20190525 HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FK623AttendDllCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe.config
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\bin\x86\Release\ADODB.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\bin\x86\Release\Newtonsoft.Json.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\bin\x86\Release\Interop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\bin\x86\Release\AxInterop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\Interop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\AxInterop.AXIMAGELib.dll
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.ResolveComReference.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmDoorTimeHS.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPassTimeHS.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPhotoManage.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmAdjust.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmBellInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmEnroll.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmLog.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmMain.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmNetInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPasstimeInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPostShiftInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmProductData.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSelectFKFirmwareVer.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSystemInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmUserInfo.resources
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.GenerateResource.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.CoreCompileInputs.cache
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.CopyComplete
+H:\日常工作文件\浩顺SDK管理\考勤标准SDK\CS\20191010  CS HSSDK\20191010  CS HSSDK\Samples\FK623Attend\c#\obj\x86\Release\FK623AttendDllCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe.config
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\bin\x86\Release\ADODB.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\bin\x86\Release\Newtonsoft.Json.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\bin\x86\Release\Interop.AXIMAGELib.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\bin\x86\Release\AxInterop.AXIMAGELib.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csprojAssemblyReference.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\Interop.AXIMAGELib.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\AxInterop.AXIMAGELib.dll
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.ResolveComReference.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmDoorTimeHS.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPassTimeHS.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPhotoManage.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmAdjust.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmBellInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmEnroll.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmLog.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmMain.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmNetInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPasstimeInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPostShiftInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmProductData.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSelectFKFirmwareVer.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSystemInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmUserInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.GenerateResource.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.CoreCompileInputs.cache
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.CopyComplete
+F:\桌面\王毅博\更改考勤状态\20191010  CS SDK - biomax - new\Samples\FK623Attend\c#\obj\x86\Release\FK623AttendDllCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe.config
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.ResolveComReference.cache
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FK623AttendDllCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\bin\x86\Release\FK623AttendDllCSSample.exe
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\bin\x86\Release\Newtonsoft.Json.dll
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csprojResolveAssemblyReference.cache
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmDoorTimeHS.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPassTimeHS.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPhotoManage.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmAdjust.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmBellInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmEnroll.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmLog.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmMain.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmNetInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPasstimeInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmPostShiftInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmProductData.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSelectFKFirmwareVer.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmSystemInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.frmUserInfo.resources
+F:\桌面\王毅博\更改考勤状态\20191105_CS_SDK_biomax_new\Samples\FK623Attend\c#\obj\x86\Release\FKAttendDllCSSample.csproj.GenerateResource.Cache
