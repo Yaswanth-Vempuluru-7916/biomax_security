@@ -32,6 +32,23 @@ namespace SimpleAttendanceAPI
         public DateTime ExtractionTime { get; set; }
     }
 
+    public class EmployeeRecord
+    {
+        public string UserId { get; set; }
+        public string UserName { get; set; }
+        public int BackupNumber { get; set; }
+        public string MachinePrivilege { get; set; }
+    }
+
+    public class EmployeeResult
+    {
+        public bool Success { get; set; }
+        public string Message { get; set; }
+        public int TotalEmployees { get; set; }
+        public List<EmployeeRecord> Employees { get; set; }
+        public DateTime ExtractionTime { get; set; }
+    }
+
     public class SimpleAttendanceAPI
     {
         private const string DEVICE_IP = "10.67.20.120";
@@ -56,6 +73,8 @@ namespace SimpleAttendanceAPI
             Console.WriteLine("Available endpoints:");
             Console.WriteLine($"  GET http://localhost:{HTTP_PORT}/api/attendance?startDate=2025-08-08&endDate=2025-08-09");
             Console.WriteLine($"  GET http://localhost:{HTTP_PORT}/api/attendance/all");
+            Console.WriteLine($"  GET http://localhost:{HTTP_PORT}/api/employees");
+            Console.WriteLine($"  GET http://localhost:{HTTP_PORT}/api/employees/12345");
             Console.WriteLine($"  GET http://localhost:{HTTP_PORT}/api/device/status");
             Console.WriteLine("Press Ctrl+C to stop the server...");
 
@@ -141,6 +160,33 @@ namespace SimpleAttendanceAPI
                     {
                         var result = ExtractAttendanceData();
                         response = SerializeToJson(result);
+                    }
+                    else
+                    {
+                        response = "{\"error\": \"Invalid endpoint\"}";
+                    }
+                }
+                else if (path.StartsWith("/api/employees"))
+                {
+                    if (path == "/api/employees" || path == "/api/employees/")
+                    {
+                        // Get all employees
+                        var result = GetAllEmployees();
+                        response = SerializeToJson(result);
+                    }
+                    else if (path.StartsWith("/api/employees/"))
+                    {
+                        // Get specific employee by ID
+                        string userId = path.Substring("/api/employees/".Length);
+                        if (!string.IsNullOrEmpty(userId))
+                        {
+                            var result = GetEmployeeById(userId);
+                            response = SerializeToJson(result);
+                        }
+                        else
+                        {
+                            response = "{\"error\": \"Employee ID is required\"}";
+                        }
                     }
                     else
                     {
@@ -526,6 +572,509 @@ namespace SimpleAttendanceAPI
             
             return result;
         }
+
+        /// <summary>
+        /// Converts byte array to UTF-16 string (helper method for employee data)
+        /// </summary>
+        private string ByteArrayToUtf16String(byte[] byteArray)
+        {
+            if (byteArray == null || byteArray.Length == 0)
+                return "";
+
+            // Find the null terminator
+            int length = 0;
+            for (int i = 0; i < byteArray.Length; i += 2)
+            {
+                if (byteArray[i] == 0 && byteArray[i + 1] == 0)
+                {
+                    length = i;
+                    break;
+                }
+            }
+            if (length == 0) length = byteArray.Length;
+
+            try
+            {
+                return Encoding.Unicode.GetString(byteArray, 0, length).TrimEnd('\0');
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        /// <summary>
+        /// Gets all employees from the device
+        /// </summary>
+        private EmployeeResult GetAllEmployees()
+        {
+            var result = new EmployeeResult
+            {
+                Success = false,
+                Employees = new List<EmployeeRecord>(),
+                ExtractionTime = DateTime.Now
+            };
+
+            try
+            {
+                // Step 1: Connect to device
+                Console.WriteLine("Step 1: Connecting to device for employee data...");
+                int handle = FKAttendDLL.FK_ConnectNet(
+                    MACHINE_NUMBER,
+                    DEVICE_IP,
+                    DEVICE_PORT,
+                    TIMEOUT,
+                    0, // PROTOCOL_TCPIP
+                    PASSWORD,
+                    LICENSE
+                );
+
+                if (handle <= 0)
+                {
+                    result.Message = $"Failed to connect. Error code: {handle}";
+                    return result;
+                }
+
+                Console.WriteLine($"✓ Connected successfully! Handle: {handle}");
+
+                // Step 2: Disable device during operation
+                Console.WriteLine("Step 2: Disabling device for employee data extraction...");
+                int disableResult = FKAttendDLL.FK_EnableDevice(handle, 0);
+                if (disableResult != (int)enumErrorCode.RUN_SUCCESS)
+                {
+                    result.Message = $"Failed to disable device. Error code: {disableResult}";
+                    FKAttendDLL.FK_DisConnect(handle);
+                    return result;
+                }
+
+                // Step 3: Read all user IDs
+                Console.WriteLine("Step 3: Reading all user IDs...");
+                int readResult = FKAttendDLL.FK_ReadAllUserID(handle);
+                if (readResult != (int)enumErrorCode.RUN_SUCCESS)
+                {
+                    result.Message = $"Failed to read user IDs. Error code: {readResult}";
+                    FKAttendDLL.FK_EnableDevice(handle, 1);
+                    FKAttendDLL.FK_DisConnect(handle);
+                    return result;
+                }
+
+                Console.WriteLine("✓ User IDs read successfully");
+
+                // Step 4: Extract employee records
+                Console.WriteLine("Step 4: Extracting employee records...");
+                int employeeCount = 0;
+
+                int stringIdSupport = FKAttendDLL.FK_GetIsSupportStringID(handle);
+                
+                if (stringIdSupport >= (int)enumErrorCode.RUN_SUCCESS)
+                {
+                    // String ID support
+                    string enrollNumber = "";
+                    int backupNumber = 0;
+                    int machinePrivilege = 0;
+                    int enableFlag = 0;
+
+                    do
+                    {
+                        if (stringIdSupport == FKAttendDLL.USER_ID_LENGTH13_1)
+                            enrollNumber = new string((char)0x20, FKAttendDLL.USER_ID_LENGTH13_1);
+                        else
+                            enrollNumber = new string((char)0x20, FKAttendDLL.USER_ID_LENGTH);
+
+                        int getResult = FKAttendDLL.FK_GetAllUserID_StringID(
+                            handle, ref enrollNumber, ref backupNumber, ref machinePrivilege, ref enableFlag);
+
+                        if (getResult == (int)enumErrorCode.RUN_SUCCESS)
+                        {
+                            var employee = new EmployeeRecord
+                            {
+                                UserId = enrollNumber.Trim(),
+                                BackupNumber = backupNumber,
+                                MachinePrivilege = machinePrivilege == 1 ? "Manager" : "User"
+                            };
+
+                            // Get user name
+                            string userName = new string((char)0x20, 256);
+                            int nameResult = FKAttendDLL.FK_GetUserName_StringID(handle, employee.UserId, ref userName);
+                            if (nameResult == (int)enumErrorCode.RUN_SUCCESS)
+                            {
+                                employee.UserName = userName.Trim();
+                            }
+                            else
+                            {
+                                employee.UserName = "Unknown";
+                            }
+
+                            // Get detailed user info if available
+                            try
+                            {
+                                byte[] userInfoBytes = new byte[FKAttendDLL.SIZE_USER_INFO_V4];
+                                int userInfoLen = userInfoBytes.Length;
+                                int userInfoResult = FKAttendDLL.FK_GetUserInfoEx_StringID(handle, employee.UserId, userInfoBytes, ref userInfoLen);
+                                
+                                if (userInfoResult == (int)enumErrorCode.RUN_SUCCESS)
+                                {
+                                    if (stringIdSupport == FKAttendDLL.USER_ID_LENGTH13_1)
+                                    {
+                                        GCHandle handle2 = GCHandle.Alloc(userInfoBytes, GCHandleType.Pinned);
+                                        try
+                                        {
+                                            USER_INFO_STRING_ID_13_1 userInfo = (USER_INFO_STRING_ID_13_1)Marshal.PtrToStructure(handle2.AddrOfPinnedObject(), typeof(USER_INFO_STRING_ID_13_1));
+                                            
+                                            if (userInfo.UserName != null)
+                                            {
+                                                string detailedName = ByteArrayToUtf16String(userInfo.UserName);
+                                                if (!string.IsNullOrEmpty(detailedName))
+                                                    employee.UserName = detailedName;
+                                            }
+                                        }
+                                        finally
+                                        {
+                                            handle2.Free();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        GCHandle handle2 = GCHandle.Alloc(userInfoBytes, GCHandleType.Pinned);
+                                        try
+                                        {
+                                            USER_INFO_STRING_ID userInfo = (USER_INFO_STRING_ID)Marshal.PtrToStructure(handle2.AddrOfPinnedObject(), typeof(USER_INFO_STRING_ID));
+                                            
+                                            if (userInfo.UserName != null)
+                                            {
+                                                string detailedName = ByteArrayToUtf16String(userInfo.UserName);
+                                                if (!string.IsNullOrEmpty(detailedName))
+                                                    employee.UserName = detailedName;
+                                            }
+                                        }
+                                        finally
+                                        {
+                                            handle2.Free();
+                                        }
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"Warning: Could not get detailed info for user {employee.UserId}: {ex.Message}");
+                            }
+
+                            result.Employees.Add(employee);
+                            employeeCount++;
+
+                            if (employeeCount % 10 == 0)
+                                Console.WriteLine($"  Extracted {employeeCount} employees...");
+                        }
+                        else if (getResult == (int)enumErrorCode.RUNERR_DATAARRAY_END)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Warning: Error getting employee {employeeCount + 1}, code: {getResult}");
+                            break;
+                        }
+                    } while (true);
+                }
+                else
+                {
+                    // Numeric ID support
+                    UInt32 enrollNumber = 0;
+                    int backupNumber = 0;
+                    int machinePrivilege = 0;
+                    int enableFlag = 0;
+
+                    do
+                    {
+                        int getResult = FKAttendDLL.FK_GetAllUserID(
+                            handle, ref enrollNumber, ref backupNumber, ref machinePrivilege, ref enableFlag);
+
+                        if (getResult == (int)enumErrorCode.RUN_SUCCESS)
+                        {
+                            var employee = new EmployeeRecord
+                            {
+                                UserId = enrollNumber.ToString(),
+                                BackupNumber = backupNumber,
+                                MachinePrivilege = machinePrivilege == 1 ? "Manager" : "User"
+                            };
+
+                            // Get user name
+                            string userName = new string((char)0x20, 256);
+                            int nameResult = FKAttendDLL.FK_GetUserName(handle, enrollNumber, ref userName);
+                            if (nameResult == (int)enumErrorCode.RUN_SUCCESS)
+                            {
+                                employee.UserName = userName.Trim();
+                            }
+                            else
+                            {
+                                employee.UserName = "Unknown";
+                            }
+
+                            // Get detailed user info if available
+                            try
+                            {
+                                byte[] userInfoBytes = new byte[FKAttendDLL.SIZE_USER_INFO_V2];
+                                int userInfoLen = userInfoBytes.Length;
+                                int userInfoResult = FKAttendDLL.FK_GetUserInfoEx(handle, enrollNumber, userInfoBytes, ref userInfoLen);
+                                
+                                if (userInfoResult == (int)enumErrorCode.RUN_SUCCESS)
+                                {
+                                    GCHandle handle2 = GCHandle.Alloc(userInfoBytes, GCHandleType.Pinned);
+                                    try
+                                    {
+                                        USER_INFO userInfo = (USER_INFO)Marshal.PtrToStructure(handle2.AddrOfPinnedObject(), typeof(USER_INFO));
+                                        
+                                        if (userInfo.UserName != null)
+                                        {
+                                            string detailedName = ByteArrayToUtf16String(userInfo.UserName);
+                                            if (!string.IsNullOrEmpty(detailedName))
+                                                employee.UserName = detailedName;
+                                        }
+                                    }
+                                    finally
+                                    {
+                                        handle2.Free();
+                                    }
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"Warning: Could not get detailed info for user {employee.UserId}: {ex.Message}");
+                            }
+
+                            result.Employees.Add(employee);
+                            employeeCount++;
+
+                            if (employeeCount % 10 == 0)
+                                Console.WriteLine($"  Extracted {employeeCount} employees...");
+                        }
+                        else if (getResult == (int)enumErrorCode.RUNERR_DATAARRAY_END)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Warning: Error getting employee {employeeCount + 1}, code: {getResult}");
+                            break;
+                        }
+                    } while (true);
+                }
+
+                // Step 5: Re-enable device and disconnect
+                FKAttendDLL.FK_EnableDevice(handle, 1);
+                FKAttendDLL.FK_DisConnect(handle);
+                Console.WriteLine($"✓ Disconnected from device");
+
+                result.Success = true;
+                result.TotalEmployees = employeeCount;
+                result.Message = $"Successfully extracted {employeeCount} employee records";
+
+                Console.WriteLine($"✓ Employee extraction completed: {employeeCount} employees");
+            }
+            catch (Exception e)
+            {
+                result.Message = $"Error during employee extraction: {e.Message}";
+                Console.WriteLine($"✗ Error: {e}");
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets a specific employee by ID
+        /// </summary>
+        private EmployeeResult GetEmployeeById(string userId)
+        {
+            var result = new EmployeeResult
+            {
+                Success = false,
+                Employees = new List<EmployeeRecord>(),
+                ExtractionTime = DateTime.Now
+            };
+
+            try
+            {
+                // Step 1: Connect to device
+                Console.WriteLine($"Step 1: Connecting to device for employee {userId}...");
+                int handle = FKAttendDLL.FK_ConnectNet(
+                    MACHINE_NUMBER,
+                    DEVICE_IP,
+                    DEVICE_PORT,
+                    TIMEOUT,
+                    0, // PROTOCOL_TCPIP
+                    PASSWORD,
+                    LICENSE
+                );
+
+                if (handle <= 0)
+                {
+                    result.Message = $"Failed to connect. Error code: {handle}";
+                    return result;
+                }
+
+                Console.WriteLine($"✓ Connected successfully! Handle: {handle}");
+
+                // Step 2: Disable device during operation
+                Console.WriteLine("Step 2: Disabling device for employee data extraction...");
+                int disableResult = FKAttendDLL.FK_EnableDevice(handle, 0);
+                if (disableResult != (int)enumErrorCode.RUN_SUCCESS)
+                {
+                    result.Message = $"Failed to disable device. Error code: {disableResult}";
+                    FKAttendDLL.FK_DisConnect(handle);
+                    return result;
+                }
+
+                // Step 3: Get employee information
+                Console.WriteLine($"Step 3: Getting employee information for {userId}...");
+                
+                int stringIdSupport = FKAttendDLL.FK_GetIsSupportStringID(handle);
+                var employee = new EmployeeRecord { UserId = userId };
+
+                if (stringIdSupport >= (int)enumErrorCode.RUN_SUCCESS)
+                {
+                    // String ID support
+                    string userName = new string((char)0x20, 256);
+                    int nameResult = FKAttendDLL.FK_GetUserName_StringID(handle, userId, ref userName);
+                    if (nameResult == (int)enumErrorCode.RUN_SUCCESS)
+                    {
+                        employee.UserName = userName.Trim();
+                    }
+                    else
+                    {
+                        employee.UserName = "Unknown";
+                    }
+
+                    // Get detailed user info
+                    try
+                    {
+                        byte[] userInfoBytes = new byte[FKAttendDLL.SIZE_USER_INFO_V4];
+                        int userInfoLen = userInfoBytes.Length;
+                        int userInfoResult = FKAttendDLL.FK_GetUserInfoEx_StringID(handle, userId, userInfoBytes, ref userInfoLen);
+                        
+                        if (userInfoResult == (int)enumErrorCode.RUN_SUCCESS)
+                        {
+                            if (stringIdSupport == FKAttendDLL.USER_ID_LENGTH13_1)
+                            {
+                                GCHandle handle2 = GCHandle.Alloc(userInfoBytes, GCHandleType.Pinned);
+                                try
+                                {
+                                    USER_INFO_STRING_ID_13_1 userInfo = (USER_INFO_STRING_ID_13_1)Marshal.PtrToStructure(handle2.AddrOfPinnedObject(), typeof(USER_INFO_STRING_ID_13_1));
+                                    
+                                    if (userInfo.UserName != null)
+                                    {
+                                        string detailedName = ByteArrayToUtf16String(userInfo.UserName);
+                                        if (!string.IsNullOrEmpty(detailedName))
+                                            employee.UserName = detailedName;
+                                    }
+                                }
+                                finally
+                                {
+                                    handle2.Free();
+                                }
+                            }
+                            else
+                            {
+                                GCHandle handle2 = GCHandle.Alloc(userInfoBytes, GCHandleType.Pinned);
+                                try
+                                {
+                                    USER_INFO_STRING_ID userInfo = (USER_INFO_STRING_ID)Marshal.PtrToStructure(handle2.AddrOfPinnedObject(), typeof(USER_INFO_STRING_ID));
+                                    
+                                    if (userInfo.UserName != null)
+                                    {
+                                        string detailedName = ByteArrayToUtf16String(userInfo.UserName);
+                                        if (!string.IsNullOrEmpty(detailedName))
+                                            employee.UserName = detailedName;
+                                    }
+                                }
+                                finally
+                                {
+                                    handle2.Free();
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Warning: Could not get detailed info for user {userId}: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    // Numeric ID support
+                    if (UInt32.TryParse(userId, out UInt32 numericUserId))
+                    {
+                        string userName = new string((char)0x20, 256);
+                        int nameResult = FKAttendDLL.FK_GetUserName(handle, numericUserId, ref userName);
+                        if (nameResult == (int)enumErrorCode.RUN_SUCCESS)
+                        {
+                            employee.UserName = userName.Trim();
+                        }
+                        else
+                        {
+                            employee.UserName = "Unknown";
+                        }
+
+                        // Get detailed user info
+                        try
+                        {
+                            byte[] userInfoBytes = new byte[FKAttendDLL.SIZE_USER_INFO_V2];
+                            int userInfoLen = userInfoBytes.Length;
+                            int userInfoResult = FKAttendDLL.FK_GetUserInfoEx(handle, numericUserId, userInfoBytes, ref userInfoLen);
+                            
+                            if (userInfoResult == (int)enumErrorCode.RUN_SUCCESS)
+                            {
+                                GCHandle handle2 = GCHandle.Alloc(userInfoBytes, GCHandleType.Pinned);
+                                try
+                                {
+                                    USER_INFO userInfo = (USER_INFO)Marshal.PtrToStructure(handle2.AddrOfPinnedObject(), typeof(USER_INFO));
+                                    
+                                    if (userInfo.UserName != null)
+                                    {
+                                        string detailedName = ByteArrayToUtf16String(userInfo.UserName);
+                                        if (!string.IsNullOrEmpty(detailedName))
+                                            employee.UserName = detailedName;
+                                    }
+                                }
+                                finally
+                                {
+                                    handle2.Free();
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Warning: Could not get detailed info for user {userId}: {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        result.Message = $"Invalid user ID format: {userId}";
+                        FKAttendDLL.FK_EnableDevice(handle, 1);
+                        FKAttendDLL.FK_DisConnect(handle);
+                        return result;
+                    }
+                }
+
+                // Step 4: Re-enable device and disconnect
+                FKAttendDLL.FK_EnableDevice(handle, 1);
+                FKAttendDLL.FK_DisConnect(handle);
+                Console.WriteLine($"✓ Disconnected from device");
+
+                result.Success = true;
+                result.TotalEmployees = 1;
+                result.Employees.Add(employee);
+                result.Message = $"Successfully retrieved employee {userId}";
+
+                Console.WriteLine($"✓ Employee retrieval completed for {userId}");
+            }
+            catch (Exception e)
+            {
+                result.Message = $"Error during employee retrieval: {e.Message}";
+                Console.WriteLine($"✗ Error: {e}");
+            }
+
+            return result;
+        }
     }
 
     public class Program
@@ -577,6 +1126,59 @@ namespace SimpleAttendanceAPI
         RUNERR_FPDATAVERSION = -15
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct USER_INFO
+    {
+        public Int32 Size;
+        public Int32 Ver;
+        public UInt32 UserId;
+        public Int32 Reserved;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
+        public byte[] UserName;
+        public Int32 PostId;
+        public Int16 YearAssigned;
+        public Int16 MonthAssigned;
+        public byte StartWeekdayOfMonth;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 31)]
+        public byte[] ShiftId;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct USER_INFO_STRING_ID
+    {
+        public Int32 Size;
+        public Int32 Ver;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public byte[] UserId;
+        public Int32 Reserved;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
+        public byte[] UserName;
+        public Int32 PostId;
+        public Int16 YearAssigned;
+        public Int16 MonthAssigned;
+        public byte StartWeekdayOfMonth;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 31)]
+        public byte[] ShiftId;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct USER_INFO_STRING_ID_13_1
+    {
+        public Int32 Size;
+        public Int32 Ver;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+        public byte[] UserId;
+        public Int32 Reserved;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
+        public byte[] UserName;
+        public Int32 PostId;
+        public Int16 YearAssigned;
+        public Int16 MonthAssigned;
+        public byte StartWeekdayOfMonth;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 31)]
+        public byte[] ShiftId;
+    }
+
     public static class FKAttendDLL
     {
         [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
@@ -621,7 +1223,55 @@ namespace SimpleAttendanceAPI
         [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
         public static extern int FK_GetIsSupportStringID(int anHandleIndex);
 
+        [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
+        public static extern int FK_ReadAllUserID(int anHandleIndex);
+
+        [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
+        public static extern int FK_GetAllUserID(
+            int anHandleIndex,
+            ref UInt32 apnEnrollNumber,
+            ref int apnBackupNumber,
+            ref int apnMachinePrivilege,
+            ref int apnEnable);
+
+        [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
+        public static extern int FK_GetAllUserID_StringID(
+            int anHandleIndex,
+            ref string apEnrollNumber,
+            ref int apnBackupNumber,
+            ref int apnMachinePrivilege,
+            ref int apnEnableFlag);
+
+        [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
+        public static extern int FK_GetUserName(
+            int anHandleIndex,
+            UInt32 anEnrollNumber,
+            [MarshalAs(UnmanagedType.LPStr)] ref string apstrUserName);
+
+        [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
+        public static extern int FK_GetUserName_StringID(
+            int anHandleIndex,
+            string apEnrollNumber,
+            [MarshalAs(UnmanagedType.LPStr)] ref string apstrUserName);
+
+        [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
+        public static extern int FK_GetUserInfoEx(
+            int anHandleIndex,
+            UInt32 anEnrollNumber,
+            byte[] apUserInfo,
+            ref int apnUserInfoLen);
+
+        [DllImport("FK623Attend.dll", CharSet = CharSet.Ansi)]
+        public static extern int FK_GetUserInfoEx_StringID(
+            int anHandleIndex,
+            string apEnrollNumber,
+            byte[] apUserInfo,
+            ref int apnUserInfoLen);
+
         public const int USER_ID_LENGTH13_1 = 32;
         public const int USER_ID_LENGTH = 16;
+        public const int NAME_BYTE_COUNT = 128;
+        public const int SIZE_USER_INFO_V2 = 184;
+        public const int SIZE_USER_INFO_V4 = 212;
     }
 }
