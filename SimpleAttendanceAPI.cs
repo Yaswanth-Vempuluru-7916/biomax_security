@@ -101,6 +101,19 @@ namespace SimpleAttendanceAPI
             listener?.Stop();
         }
 
+        // ===== Optional CORS support =====
+        // To enable CORS, uncomment the helper below and the calls in ProcessRequest.
+        // private void AddCors(HttpListenerResponse response)
+        // {
+        //     // Allow your site's origin or use "*" for any origin (no credentials)
+        //     response.Headers["Access-Control-Allow-Origin"] = "*"; // e.g., "https://your-site.com"
+        //     response.Headers["Access-Control-Allow-Methods"] = "GET, OPTIONS";
+        //     response.Headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization";
+        //     // If you need cookies/credentials, also uncomment the next two lines and set a specific origin instead of "*"
+        //     // response.Headers["Access-Control-Allow-Credentials"] = "true";
+        //     // response.Headers["Vary"] = "Origin";
+        // }
+
         private void ProcessRequest(HttpListenerContext context)
         {
             string path = context.Request.Url.AbsolutePath;
@@ -108,6 +121,15 @@ namespace SimpleAttendanceAPI
             string query = context.Request.Url.Query;
 
             Console.WriteLine($"{DateTime.Now:HH:mm:ss} {method} {path}{query}");
+
+            // CORS preflight handling (uncomment if enabling CORS)
+            // if (method == "OPTIONS")
+            // {
+            //     AddCors(context.Response);
+            //     context.Response.StatusCode = 200;
+            //     context.Response.Close();
+            //     return;
+            // }
 
             string response = "";
             string contentType = "application/json";
@@ -210,6 +232,8 @@ namespace SimpleAttendanceAPI
 
             byte[] buffer = Encoding.UTF8.GetBytes(response);
             context.Response.ContentType = contentType;
+            // Add CORS headers to normal responses (uncomment if enabling CORS)
+            // AddCors(context.Response);
             context.Response.ContentLength64 = buffer.Length;
             context.Response.OutputStream.Write(buffer, 0, buffer.Length);
             context.Response.Close();
