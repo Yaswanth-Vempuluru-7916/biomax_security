@@ -13,9 +13,14 @@ namespace SimpleAttendanceAPI
     {
         public string UserId { get; set; }
         public DateTime LogTime { get; set; }
-        public string VerifyMode { get; set; }
-        public string InOutMode { get; set; }
+        // Raw integer values from device SDK
+        public int VerifyMode { get; set; }
+        public int InOutMode { get; set; }
         public int WorkCode { get; set; }
+        
+        // ADDED: Decoded string values for easy reading (optional)
+        public string VerifyModeString { get; set; }
+        public string InOutModeString { get; set; }
     }
 
     public class ExtractionResult
@@ -102,9 +107,31 @@ namespace SimpleAttendanceAPI
                         {
                             var queryParams = ParseQueryString(query);
                             if (queryParams.ContainsKey("startDate"))
-                                DateTime.TryParse(queryParams["startDate"], out DateTime start);
+                            {
+                                DateTime start;
+                                if (DateTime.TryParse(queryParams["startDate"], out start))
+                                {
+                                    startDate = start;
+                                    Console.WriteLine($"✓ Parsed startDate: {startDate:yyyy-MM-dd}");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"✗ Failed to parse startDate: {queryParams["startDate"]}");
+                                }
+                            }
                             if (queryParams.ContainsKey("endDate"))
-                                DateTime.TryParse(queryParams["endDate"], out DateTime end);
+                            {
+                                DateTime end;
+                                if (DateTime.TryParse(queryParams["endDate"], out end))
+                                {
+                                    endDate = end;
+                                    Console.WriteLine($"✓ Parsed endDate: {endDate:yyyy-MM-dd}");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"✗ Failed to parse endDate: {queryParams["endDate"]}");
+                                }
+                            }
                         }
 
                         var result = ExtractAttendanceData(startDate, endDate);
@@ -220,10 +247,24 @@ namespace SimpleAttendanceAPI
                 
                 if (startDate.HasValue && endDate.HasValue)
                 {
+                    Console.WriteLine($"Loading data for date range: {startDate.Value:yyyy-MM-dd} to {endDate.Value:yyyy-MM-dd}");
                     loadResult = FKAttendDLL.FK_LoadGeneralLogDataByDate(handle, startDate.Value, endDate.Value);
+                }
+                else if (startDate.HasValue)
+                {
+                    // If only start date is provided, use it as both start and end date
+                    Console.WriteLine($"Loading data for date: {startDate.Value:yyyy-MM-dd}");
+                    loadResult = FKAttendDLL.FK_LoadGeneralLogDataByDate(handle, startDate.Value, startDate.Value);
+                }
+                else if (endDate.HasValue)
+                {
+                    // If only end date is provided, use it as both start and end date
+                    Console.WriteLine($"Loading data for date: {endDate.Value:yyyy-MM-dd}");
+                    loadResult = FKAttendDLL.FK_LoadGeneralLogDataByDate(handle, endDate.Value, endDate.Value);
                 }
                 else
                 {
+                    Console.WriteLine("Loading all attendance data (no date filter)");
                     loadResult = FKAttendDLL.FK_LoadGeneralLogData(handle, 0);
                 }
 
@@ -263,13 +304,16 @@ namespace SimpleAttendanceAPI
 
                         if (getResult == (int)enumErrorCode.RUN_SUCCESS)
                         {
+                            // Store both raw values and decoded strings
                             var record = new AttendanceRecord
                             {
                                 UserId = enrollNumber.Trim(),
                                 LogTime = logTime,
-                                VerifyMode = GetVerifyModeString(verifyMode),
-                                InOutMode = GetInOutModeString(inOutMode),
-                                WorkCode = workCode
+                                VerifyMode = verifyMode,    // Raw bit-encoded integer
+                                InOutMode = inOutMode,      // Raw bit-encoded integer  
+                                WorkCode = workCode,
+                                VerifyModeString = GetStringVerifyMode(verifyMode), // Decoded string
+                                InOutModeString = GetStringInOutMode(inOutMode)     // Decoded string
                             };
 
                             result.Records.Add(record);
@@ -308,9 +352,11 @@ namespace SimpleAttendanceAPI
                             {
                                 UserId = enrollNumber.ToString(),
                                 LogTime = logTime,
-                                VerifyMode = GetVerifyModeString(verifyMode),
-                                InOutMode = GetInOutModeString(inOutMode),
-                                WorkCode = workCode
+                                VerifyMode = verifyMode,
+                                InOutMode = inOutMode,
+                                WorkCode = workCode,
+                                VerifyModeString = GetStringVerifyMode(verifyMode),
+                                InOutModeString = GetStringInOutMode(inOutMode)
                             };
 
                             result.Records.Add(record);
@@ -381,40 +427,104 @@ namespace SimpleAttendanceAPI
             }
         }
 
-        private string GetVerifyModeString(int verifyMode)
+        // ADDED: Methods to decode the actual device data format (based on FKAttend SDK)
+        
+        /// <summary>
+        /// Decodes VerifyMode bit-encoded value to readable string (based on FKAttend SDK GetStringVerifyMode)
+        /// </summary>
+        private string GetStringVerifyMode(int nVerifyMode)
         {
-            switch (verifyMode)
+            string result = "";
+            int byteCount = 4;
+            byte[] byteKind = BitConverter.GetBytes(nVerifyMode);
+            
+            for (int nIndex = byteCount - 1; nIndex >= 0; nIndex--)
             {
-                case 1: return "Fingerprint";
-                case 2: return "Password";
-                case 3: return "Card";
-                case 4: return "Fingerprint+Password";
-                case 5: return "Card+Fingerprint";
-                case 6: return "Password+Fingerprint";
-                case 7: return "Card+Fingerprint";
-                case 8: return "Job Number";
-                case 9: return "Card+Password";
-                case 20: return "Face";
-                case 21: return "Face+Card";
-                case 22: return "Face+Password";
-                case 23: return "Card+Face";
-                case 24: return "Password+Face";
-                default: return "Unknown";
+                int firstKind = byteKind[nIndex] & 0xF0;
+                int secondKind = byteKind[nIndex] & 0x0F;
+                firstKind = firstKind >> 4;
+                
+                if (firstKind == 0) break;
+                
+                if (nIndex < byteCount - 1)
+                    result += "+";
+                    
+                switch (firstKind)
+                {
+                    case 1: result += "FP"; break;        // VK_FP
+                    case 2: result += "PASS"; break;      // VK_PASS  
+                    case 3: result += "CARD"; break;      // VK_CARD
+                    case 4: result += "FACE"; break;      // VK_FACE
+                    case 5: result += "FINGER VEIN"; break; // VK_FINGERVEIN
+                    case 6: result += "IRIS"; break;      // VK_IRIS
+                    case 7: result += "PALM VEIN"; break; // VK_PALMVEIN
+                    case 8: result += "VOICE"; break;     // VK_VOICE
+                }
+                
+                if (secondKind == 0) break;
+                result += "+";
+                
+                switch (secondKind)
+                {
+                    case 1: result += "FP"; break;
+                    case 2: result += "PASS"; break;
+                    case 3: result += "CARD"; break;
+                    case 4: result += "FACE"; break;
+                    case 5: result += "FINGER VEIN"; break;
+                    case 6: result += "IRIS"; break;
+                    case 7: result += "PALM VEIN"; break;
+                    case 8: result += "VOICE"; break;
+                }
             }
+            
+            return string.IsNullOrEmpty(result) ? "--" : result;
         }
-
-        private string GetInOutModeString(int inOutMode)
+        
+        /// <summary>
+        /// Decodes InOutMode bit-encoded value (based on FKAttend SDK GetIoModeAndDoorMode)
+        /// </summary>
+        private string GetStringInOutMode(int nIoMode)
         {
-            switch (inOutMode)
+            byte[] byteKind = BitConverter.GetBytes(nIoMode);
+            
+            // Extract the actual IO mode and In/Out flag
+            int ioMode = byteKind[0] & 0x0f;
+            int inOut = byteKind[0] >> 4;
+            
+            // Extract door mode (bytes 1-3)
+            byte[] byteDoorMode = new byte[4];
+            for (int nIndex = 0; nIndex < 3; nIndex++)
             {
-                case 0: return "Check In";
-                case 1: return "Check Out";
-                case 2: return "Break Out";
-                case 3: return "Break In";
-                case 4: return "Overtime In";
-                case 5: return "Overtime Out";
-                default: return "Unknown";
+                byteDoorMode[nIndex] = byteKind[nIndex + 1];
             }
+            byteDoorMode[3] = 0;
+            int doorMode = BitConverter.ToInt32(byteDoorMode, 0);
+            
+            // Create readable string
+            string result = $"( {ioMode} )";
+            
+            // Add door mode description
+            switch (doorMode)
+            {
+                case 1: result += "&( Close door )"; break;
+                case 2: result += "&( Open door )"; break;
+                case 3: result += "&( Prog Open )"; break;
+                case 4: result += "&( Prog Close )"; break;
+                case 5: result += "&( Illegal Open )"; break;
+                case 6: result += "&( Illegal Close )"; break;
+                case 9: result += "&( Open door )"; break;
+                default: result += $"&( Door {doorMode} )"; break;
+            }
+            
+            // Add In/Out description
+            switch (inOut)
+            {
+                case 0: result += "&( In )"; break;
+                case 1: result += "&( Out )"; break;
+                default: result += $"&( {inOut} )"; break;
+            }
+            
+            return result;
         }
     }
 

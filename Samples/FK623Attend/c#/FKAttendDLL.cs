@@ -927,14 +927,14 @@ public class FKAttendDLL
         byte[] vbyteKind = new byte[vByteCount];
         byte[] vbyteDoorMode = new byte[vByteCount];
         vbyteKind = BitConverter.GetBytes(nIoMode);
-        //Ö®Ç°µÄ¶¨ÒåÓÐbug£¬ÏÂÃæÊÇ×¢ÊÍµô´úÂë  The previous definition was buggy. Here is the code to comment out
+        //Ö®Ç°ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½bugï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½  The previous definition was buggy. Here is the code to comment out
         //vIoMode = vbyteKind[0];
 
-        //----------¸ü¸ÄºóµÄ´úÂë Codes Changed-----------
+        //----------ï¿½ï¿½ï¿½Äºï¿½Ä´ï¿½ï¿½ï¿½ Codes Changed-----------
 
         vIoMode = vbyteKind[0] & 0x0f;
         vInOut = vbyteKind[0] >> 4;
-        //----------¸ü¸ÄºóµÄ´úÂë Codes Changed-----------
+        //----------ï¿½ï¿½ï¿½Äºï¿½Ä´ï¿½ï¿½ï¿½ Codes Changed-----------
         for (int nIndex = 0; nIndex < 3; nIndex++)
         {
             vbyteDoorMode[nIndex] = vbyteKind[nIndex + 1];
