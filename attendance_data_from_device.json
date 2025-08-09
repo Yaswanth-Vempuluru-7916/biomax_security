@@ -1,0 +1,10 @@
+{
+  "Success": true,
+  "Message": "Successfully extracted 0 attendance records DIRECTLY from device using Numeric ID",
+  "TotalRecords": 0,
+  "Records": [],
+  "ExtractionTime": "2025-08-08T16:14:08.894400",
+  "Source": "Device (Numeric ID)",
+  "DeviceIP": "10.67.20.120",
+  "DevicePort": 5005
+}
