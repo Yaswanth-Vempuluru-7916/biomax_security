@@ -1,1 +1,45 @@
+# Build artifacts
+bin/
+obj/
+/deploy/
+
+# Visual Studio
 .vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Output artifacts
+*.exe
+*.dll
+*.pdb
+*.config
+!Execute&Dll/*.dll
+!Execute&Dll/*.ocx
+!Execute&Dll/*.exe
+!Execute&Dll/*.config
+!App.config
+
+# Logs
+*.log
+
+# Package manager
+packages/
+*.nuget.props
+*.nuget.targets
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

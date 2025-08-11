@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -51,16 +52,80 @@ namespace SimpleAttendanceAPI
 
     public class SimpleAttendanceAPI
     {
-        private const string DEVICE_IP = "10.67.20.120";
-        private const int DEVICE_PORT = 5005;
-        private const int MACHINE_NUMBER = 1;
-        private const int PASSWORD = 0;
-        private const int TIMEOUT = 5000;
-        private const int LICENSE = 1261;
-        private const int HTTP_PORT = 8080;
+        // Configuration loaded from App.config or environment variables
+        private readonly string DEVICE_IP;
+        private readonly int DEVICE_PORT;
+        private readonly int MACHINE_NUMBER;
+        private readonly int PASSWORD;
+        private readonly int TIMEOUT;
+        private readonly int LICENSE;
+        private readonly int HTTP_PORT;
+        private readonly bool ENABLE_CORS;
+        private readonly string CORS_ORIGINS;
 
         private HttpListener listener;
         private bool isRunning = false;
+
+        // public SimpleAttendanceAPI()
+        // {
+        //     // Load configuration - no hardcoded fallbacks, must come from env var or App.config
+        //     DEVICE_IP = Environment.GetEnvironmentVariable("DEVICE_IP") 
+        //                 ?? throw new ConfigurationErrorsException("DEVICE_IP must be set in environment variable or App.config");
+
+        //     DEVICE_PORT = int.Parse(Environment.GetEnvironmentVariable("DEVICE_PORT")  
+        //                 ?? throw new ConfigurationErrorsException("DEVICE_PORT must be set in environment variable or App.config"));
+
+        //     MACHINE_NUMBER = int.Parse(Environment.GetEnvironmentVariable("MACHINE_NUMBER")  
+        //                 ?? throw new ConfigurationErrorsException("MACHINE_NUMBER must be set in environment variable or App.config"));
+
+        //     PASSWORD = int.Parse(Environment.GetEnvironmentVariable("DEVICE_PASSWORD")  
+        //                 ?? throw new ConfigurationErrorsException("DEVICE_PASSWORD must be set in environment variable or App.config"));
+
+        //     TIMEOUT = int.Parse(Environment.GetEnvironmentVariable("DEVICE_TIMEOUT")  
+        //                 ?? throw new ConfigurationErrorsException("DEVICE_TIMEOUT must be set in environment variable or App.config"));
+
+        //     LICENSE = int.Parse(Environment.GetEnvironmentVariable("DEVICE_LICENSE")  
+        //                 ?? throw new ConfigurationErrorsException("DEVICE_LICENSE must be set in environment variable or App.config"));
+
+        //     HTTP_PORT = int.Parse(Environment.GetEnvironmentVariable("HTTP_PORT")  
+        //                 ?? throw new ConfigurationErrorsException("HTTP_PORT must be set in environment variable or App.config"));
+
+        //     ENABLE_CORS = bool.Parse(Environment.GetEnvironmentVariable("ENABLE_CORS")  
+        //                 ?? throw new ConfigurationErrorsException("ENABLE_CORS must be set in environment variable or App.config"));
+
+        //     CORS_ORIGINS = Environment.GetEnvironmentVariable("CORS_ORIGINS") 
+        //                 ?? throw new ConfigurationErrorsException("CORS_ORIGINS must be set in environment variable or App.config");
+        // }
+        public SimpleAttendanceAPI()
+        {
+            // Load configuration - no hardcoded fallbacks, must come from env var or App.config
+            DEVICE_IP = Environment.GetEnvironmentVariable("DEVICE_IP") ?? ConfigurationManager.AppSettings["DeviceIP"] 
+                        ?? throw new ConfigurationErrorsException("DEVICE_IP must be set in environment variable or App.config");
+
+            DEVICE_PORT = int.Parse(Environment.GetEnvironmentVariable("DEVICE_PORT") ?? ConfigurationManager.AppSettings["DevicePort"] 
+                        ?? throw new ConfigurationErrorsException("DEVICE_PORT must be set in environment variable or App.config"));
+
+            MACHINE_NUMBER = int.Parse(Environment.GetEnvironmentVariable("MACHINE_NUMBER") ?? ConfigurationManager.AppSettings["MachineNumber"] 
+                        ?? throw new ConfigurationErrorsException("MACHINE_NUMBER must be set in environment variable or App.config"));
+
+            PASSWORD = int.Parse(Environment.GetEnvironmentVariable("DEVICE_PASSWORD") ?? ConfigurationManager.AppSettings["DevicePassword"] 
+                        ?? throw new ConfigurationErrorsException("DEVICE_PASSWORD must be set in environment variable or App.config"));
+
+            TIMEOUT = int.Parse(Environment.GetEnvironmentVariable("DEVICE_TIMEOUT") ?? ConfigurationManager.AppSettings["DeviceTimeout"] 
+                        ?? throw new ConfigurationErrorsException("DEVICE_TIMEOUT must be set in environment variable or App.config"));
+
+            LICENSE = int.Parse(Environment.GetEnvironmentVariable("DEVICE_LICENSE") ?? ConfigurationManager.AppSettings["DeviceLicense"] 
+                        ?? throw new ConfigurationErrorsException("DEVICE_LICENSE must be set in environment variable or App.config"));
+
+            HTTP_PORT = int.Parse(Environment.GetEnvironmentVariable("HTTP_PORT") ?? ConfigurationManager.AppSettings["HttpPort"] 
+                        ?? throw new ConfigurationErrorsException("HTTP_PORT must be set in environment variable or App.config"));
+
+            ENABLE_CORS = bool.Parse(Environment.GetEnvironmentVariable("ENABLE_CORS") ?? ConfigurationManager.AppSettings["EnableCors"] 
+                        ?? throw new ConfigurationErrorsException("ENABLE_CORS must be set in environment variable or App.config"));
+
+            CORS_ORIGINS = Environment.GetEnvironmentVariable("CORS_ORIGINS") ?? ConfigurationManager.AppSettings["CorsOrigins"] 
+                        ?? throw new ConfigurationErrorsException("CORS_ORIGINS must be set in environment variable or App.config");
+        }
 
         public void Start()
         {
@@ -101,18 +166,20 @@ namespace SimpleAttendanceAPI
             listener?.Stop();
         }
 
-        // ===== Optional CORS support =====
-        // To enable CORS, uncomment the helper below and the calls in ProcessRequest.
-        // private void AddCors(HttpListenerResponse response)
-        // {
-        //     // Allow your site's origin or use "*" for any origin (no credentials)
-        //     response.Headers["Access-Control-Allow-Origin"] = "*"; // e.g., "https://your-site.com"
-        //     response.Headers["Access-Control-Allow-Methods"] = "GET, OPTIONS";
-        //     response.Headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization";
-        //     // If you need cookies/credentials, also uncomment the next two lines and set a specific origin instead of "*"
-        //     // response.Headers["Access-Control-Allow-Credentials"] = "true";
-        //     // response.Headers["Vary"] = "Origin";
-        // }
+        // CORS support - now configurable via App.config
+        private void AddCors(HttpListenerResponse response)
+        {
+            if (ENABLE_CORS)
+            {
+                response.Headers["Access-Control-Allow-Origin"] = CORS_ORIGINS;
+                response.Headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+                response.Headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization";
+                
+                // If you need cookies/credentials, uncomment the next two lines and set a specific origin
+                // response.Headers["Access-Control-Allow-Credentials"] = "true";
+                // response.Headers["Access-Control-Allow-Origin"] = "http://localhost:3000"; // your frontend URL
+            }
+        }
 
         private void ProcessRequest(HttpListenerContext context)
         {
@@ -122,14 +189,14 @@ namespace SimpleAttendanceAPI
 
             Console.WriteLine($"{DateTime.Now:HH:mm:ss} {method} {path}{query}");
 
-            // CORS preflight handling (uncomment if enabling CORS)
-            // if (method == "OPTIONS")
-            // {
-            //     AddCors(context.Response);
-            //     context.Response.StatusCode = 200;
-            //     context.Response.Close();
-            //     return;
-            // }
+            // CORS preflight handling
+            if (method == "OPTIONS" && ENABLE_CORS)
+            {
+                AddCors(context.Response);
+                context.Response.StatusCode = 200;
+                context.Response.Close();
+                return;
+            }
 
             string response = "";
             string contentType = "application/json";
@@ -232,8 +299,8 @@ namespace SimpleAttendanceAPI
 
             byte[] buffer = Encoding.UTF8.GetBytes(response);
             context.Response.ContentType = contentType;
-            // Add CORS headers to normal responses (uncomment if enabling CORS)
-            // AddCors(context.Response);
+            // Add CORS headers to normal responses
+            AddCors(context.Response);
             context.Response.ContentLength64 = buffer.Length;
             context.Response.OutputStream.Write(buffer, 0, buffer.Length);
             context.Response.Close();

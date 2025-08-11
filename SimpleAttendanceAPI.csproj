@@ -35,10 +35,11 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>Newtonsoft.Json.dll</HintPath>
+      <HintPath>Execute&amp;Dll\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq" />
@@ -54,44 +55,61 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FK623Attend.dll">
+    <Content Include="Execute&amp;Dll\FK623Attend.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>FK623Attend.dll</Link>
     </Content>
-    <Content Include="FKAttend.dll">
+    <Content Include="Execute&amp;Dll\FKAttend.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>FKAttend.dll</Link>
     </Content>
-    <Content Include="FKPwdEncDec.dll">
+    <Content Include="Execute&amp;Dll\FKPwdEncDec.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>FKPwdEncDec.dll</Link>
     </Content>
-    <Content Include="FKViaDev.dll">
+    <Content Include="Execute&amp;Dll\FKViaDev.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>FKViaDev.dll</Link>
     </Content>
-    <Content Include="FpDataConv.dll">
+    <Content Include="Execute&amp;Dll\FpDataConv.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>FpDataConv.dll</Link>
     </Content>
-    <Content Include="FaceDataConv.dll">
+    <Content Include="Execute&amp;Dll\FaceDataConv.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>FaceDataConv.dll</Link>
     </Content>
-    <Content Include="Interop.AXIMAGELib.dll">
+    <Content Include="Execute&amp;Dll\Interop.AXIMAGELib.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Interop.AXIMAGELib.dll</Link>
     </Content>
-    <Content Include="Interop.RealSvrOcxTcpLib.dll">
+    <Content Include="Execute&amp;Dll\Interop.RealSvrOcxTcpLib.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Interop.RealSvrOcxTcpLib.dll</Link>
     </Content>
-    <Content Include="LFWViaDev.dll">
+    <Content Include="Execute&amp;Dll\LFWViaDev.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>LFWViaDev.dll</Link>
     </Content>
-    <Content Include="MSDATGRD.OCX">
+    <Content Include="Execute&amp;Dll\MSDATGRD.OCX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>MSDATGRD.OCX</Link>
     </Content>
-    <Content Include="RealSvrOcxTcp.ocx">
+    <Content Include="Execute&amp;Dll\RealSvrOcxTcp.ocx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>RealSvrOcxTcp.ocx</Link>
     </Content>
-    <Content Include="AxImage.ocx">
+    <Content Include="Execute&amp;Dll\AxImage.ocx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>AxImage.ocx</Link>
     </Content>
-    <Content Include="adodb.dll">
+    <Content Include="Execute&amp;Dll\adodb.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>adodb.dll</Link>
+    </Content>
+    <Content Include="Execute&amp;Dll\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Newtonsoft.Json.dll</Link>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
